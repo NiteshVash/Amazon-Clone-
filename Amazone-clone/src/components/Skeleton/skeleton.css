@@ -1,0 +1,57 @@
+/* Skeleton Loading Styles */
+.product-skeleton {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .skeleton-image {
+    width: 100%;
+    height: 180px;
+    background-color: #f0f0f0;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-title {
+    width: 80%;
+    height: 1rem;
+    background-color: #f0f0f0;
+    margin-bottom: 0.5rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-rating {
+    width: 60%;
+    height: 0.8rem;
+    background-color: #f0f0f0;
+    margin-bottom: 0.5rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-price {
+    width: 40%;
+    height: 1rem;
+    background-color: #f0f0f0;
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-button {
+    width: 100%;
+    height: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 0.25rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
