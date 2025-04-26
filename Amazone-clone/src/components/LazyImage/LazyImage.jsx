@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './LazyImage.css';
+import fallbackImage from '../../assets/image-fallback.jpg';
 
-const LazyImage = ({ 
+const LazyImage = memo(({ 
   src, 
   alt, 
   className,
   placeholderType = 'skeleton',
   placeholderColor = '#f3f3f3',
-  fallbackSrc = '/src/assets/image-fallback.png'
+  fallbackSrc = fallbackImage
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
@@ -49,6 +50,6 @@ const LazyImage = ({
       )}
     </>
   );
-};
+});
 
 export default LazyImage;

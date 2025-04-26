@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useCallback } from 'react';
 import { CartContext } from '../components/Cart/Cartcontext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,7 +20,7 @@ export const useCart = () => {
     setSearchTerm
   } = context;
 
-  const addToCart = (product, quantity = 1) => {
+  const addToCart = useCallback((product, quantity = 1) => {
     contextAddToCart(product, quantity);
     toast.success(`${product.title} added to cart!`, {
       position: "bottom-right",
@@ -30,7 +30,7 @@ export const useCart = () => {
       pauseOnHover: true,
       draggable: true,
     });
-  };
+  }, [contextAddToCart]);
 
   const getCartItemCount = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);

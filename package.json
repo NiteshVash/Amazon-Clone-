@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "react-fontawesome": "^1.7.1",
     "react-router-dom": "^7.5.0"
   }

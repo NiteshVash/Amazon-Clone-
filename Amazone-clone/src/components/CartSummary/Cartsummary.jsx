@@ -25,7 +25,7 @@ const CartSummary = () => {
             {cart.map(item => (
               <div key={item.id} className="cart-item">
                 <img 
-                  src={item.image} 
+                  src={`/src/assets/${item.image}`} 
                   alt={item.title} 
                   className="cart-item-image"
                 />

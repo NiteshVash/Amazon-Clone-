@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { createContext, useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,13 +7,31 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const saveTimeout = useRef(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedCart = localStorage.getItem('amazon-clone-cart');
-      if (savedCart) setCart(JSON.parse(savedCart));
+      try {
+        const savedCart = localStorage.getItem('amazon-clone-cart');
+        if (savedCart) setCart(JSON.parse(savedCart));
+      } catch (error) {
+        console.error('Failed to load cart from localStorage:', error);
+      }
     }
   }, []);
+
+  const saveCartToLocalStorage = (cartData) => {
+    if (saveTimeout.current) {
+      clearTimeout(saveTimeout.current);
+    }
+    saveTimeout.current = setTimeout(() => {
+      try {
+        localStorage.setItem('amazon-clone-cart', JSON.stringify(cartData));
+      } catch (error) {
+        console.error('Failed to save cart to localStorage:', error);
+      }
+    }, 300);
+  };
 
   const addToCart = useCallback((product, quantity = 1) => {
     setCart(prevCart => {
@@ -30,7 +48,7 @@ export const CartProvider = ({ children }) => {
         updatedCart = [...prevCart, { ...product, quantity }];
       }
 
-      localStorage.setItem('amazon-clone-cart', JSON.stringify(updatedCart));
+      saveCartToLocalStorage(updatedCart);
       return updatedCart;
     });
   }, []);
@@ -38,7 +56,7 @@ export const CartProvider = ({ children }) => {
   const removeFromCart = useCallback((productId) => {
     setCart(prevCart => {
       const updatedCart = prevCart.filter(item => item.id !== productId);
-      localStorage.setItem('amazon-clone-cart', JSON.stringify(updatedCart));
+      saveCartToLocalStorage(updatedCart);
       return updatedCart;
     });
   }, []);
@@ -52,7 +70,7 @@ export const CartProvider = ({ children }) => {
           ? { ...item, quantity: newQuantity }
           : item
       );
-      localStorage.setItem('amazon-clone-cart', JSON.stringify(updatedCart));
+      saveCartToLocalStorage(updatedCart);
       return updatedCart;
     });
   }, []);

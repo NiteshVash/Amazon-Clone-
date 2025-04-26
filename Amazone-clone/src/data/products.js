@@ -2,61 +2,131 @@ export const products = [
   {
     id: 1,
     title: 'Ergonomic Office Chair',
+    description: 'Comfortable and adjustable office chair with lumbar support.',
     price: 125.99,
     originalPrice: 199.99,
     rating: 4.5,
     image: 'chair.jpg',
     category: 'Furniture',
-    inStock: true
+    inStock: true,
+    ratingCount: 245,
+    reviews: 34
   },
   {
     id: 2,
     title: 'Wireless Gaming Headset',
+    description: 'High-quality wireless headset with surround sound and noise cancellation.',
     price: 89.99,
     originalPrice: 129.99,
     rating: 4.2,
     image: 'box1_image.jpg',
     category: 'Electronics',
-    inStock: true
+    inStock: true,
+    ratingCount: 512,
+    reviews: 89
   },
   {
     id: 3,
     title: 'Mechanical Gaming Keyboard',
+    description: 'RGB backlit mechanical keyboard with customizable keys.',
     price: 75.50,
     originalPrice: 99.99,
     rating: 4.7,
     image: 'box2_image.jpg',
     category: 'Electronics',
-    inStock: true
+    inStock: true,
+    ratingCount: 389,
+    reviews: 45
   },
   {
     id: 4,
     title: 'Premium Denim Jeans',
+    description: 'Stylish and durable denim jeans with a comfortable fit.',
     price: 45.99,
     originalPrice: 79.99,
     rating: 4.1,
     image: 'box3_image.jpg',
     category: 'Clothing',
-    inStock: true
+    inStock: true,
+    ratingCount: 178,
+    reviews: 22
   },
   {
     id: 5,
     title: 'Skincare Gift Set',
+    description: 'Complete skincare set with cleanser, toner, and moisturizer.',
     price: 32.99,
     originalPrice: 49.99,
     rating: 4.3,
     image: '1.jpg',
     category: 'Beauty',
-    inStock: true
+    inStock: true,
+    ratingCount: 234,
+    reviews: 30
   },
   {
     id: 6,
     title: 'Smart LED Desk Lamp',
+    description: 'Energy-efficient LED desk lamp with adjustable brightness and color temperature.',
     price: 39.99,
     originalPrice: 59.99,
     rating: 4.4,
     image: '2.jpg',
     category: 'Home',
-    inStock: true
+    inStock: true,
+    ratingCount: 198,
+    reviews: 27
+  },
+  {
+    id: 7,
+    title: 'Bluetooth Portable Speaker',
+    description: 'Compact and powerful speaker with deep bass and long battery life.',
+    price: 55.99,
+    originalPrice: 79.99,
+    rating: 4.6,
+    image: '3.jpg',
+    category: 'Electronics',
+    inStock: true,
+    ratingCount: 320,
+    reviews: 40
+  },
+  {
+    id: 8,
+    title: 'Classic Leather Wallet',
+    description: 'Premium leather wallet with multiple card slots and coin pocket.',
+    price: 29.99,
+    originalPrice: 49.99,
+    rating: 4.0,
+    image: '4.jpg',
+    category: 'Accessories',
+    inStock: true,
+    ratingCount: 150,
+    reviews: 18
+  },
+  {
+    id: 9,
+    title: 'Stainless Steel Water Bottle',
+    description: 'Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours.',
+    price: 22.99,
+    originalPrice: 34.99,
+    rating: 4.5,
+    image: '5.jpg',
+    category: 'Outdoors',
+    inStock: true,
+    ratingCount: 210,
+    reviews: 25
+  },
+  {
+    id: 10,
+    title: 'Yoga Mat with Carrying Strap',
+    description: 'Non-slip yoga mat with comfortable cushioning and easy to carry.',
+    price: 35.99,
+    originalPrice: 49.99,
+    rating: 4.3,
+    image: '6.jpg',
+    category: 'Fitness',
+    inStock: true,
+    ratingCount: 180,
+    reviews: 20
   }
 ];
