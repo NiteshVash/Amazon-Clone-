@@ -30,6 +30,7 @@
   transition: opacity 0.3s ease;
 }
 
+
 .image-loaded {
   opacity: 1;
   width: 100%;
