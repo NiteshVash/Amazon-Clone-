@@ -1,0 +1,11 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "commands": {
+      "install": "npm install",
+      "build": "npm run build"
+    }
+  }
+}
