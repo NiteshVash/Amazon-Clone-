@@ -2,6 +2,7 @@ import React, { useState, memo } from 'react';
 import './LazyImage.css';
 import fallbackImage from '../../assets/image-fallback.jpg';
 
+
 const LazyImage = memo(({ 
   src, 
   alt, 
